@@ -5,7 +5,7 @@ services:
   php:
     build: .
     volumes:
-      - ./src:/var/www/html
+      - ./src:/var/www/html # 開発ディレクトリと公開ディレクトリをマウント
     ports:
       - '8000:8000'
 
@@ -15,7 +15,7 @@ services:
     ports:
       - '3306:3306'
     volumes:
-      - ./db:/var/lib/mysql
+      - ./db:/var/lib/mysql # 開発ディレクトリと公開ディレクトリをマウント
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: laravel
